@@ -45,10 +45,11 @@
         <p class="price">R$ 15,99</p>
         <button onclick="addToCart(18)">Adicionar ao Carrinho</button>
     </div>
-    <!-- Adicione mais itens conforme necessário -->
+
     <div id="cart">
         <h2>Carrinho</h2>
         <p>Total: <span id="total">R$ 0,00</span></p>
+        <button id="botaoFinalizarCompra">Finalizar Compra</button>
     </div>
 </div>
 
@@ -59,46 +60,25 @@
         total += price;
         document.getElementById("total").innerText = "R$ " + total.toFixed(2);
     }
-     // Verifica se o navegador suporta notificações
-     if ("Notification" in window) {
-      // Pede permissão ao usuário para enviar notificações
-      Notification.requestPermission().then(function (result) {
-        if (result === "granted") {
-          // Função para exibir a notificação
-          function mostrarNotificacao() {
-            var notificacao = new Notification("Compra Realizada!", {
-              body: "Sua compra foi realizada com sucesso!",
-              icon: "caminho/para/icone.png" // Altere para o caminho do seu ícone
-            });
-          }
-
-          // Chame a função de notificação quando uma compra for realizada
-          // Aqui você deve adaptar para o seu código de acordo com a lógica do seu site
-          // Por exemplo, pode ser chamado após um evento de clique em um botão de compra
-          // Ou após um pedido ser processado no backend, etc.
-          // Exemplo de chamada:
-          // mostrarNotificacao();
-        }
-      });
-    }
-     // Adiciona um ouvinte de evento de clique ao elemento de preço
-     document.getElementById('preco').addEventListener('click', function() {
-      // Aqui você pode adicionar a lógica para iniciar o processo de finalização de compra
-      // Por exemplo, redirecionar o usuário para a página de finalização de compra
-      // Ou abrir um modal com opções para finalizar a compra
-      // Ou mostrar um formulário de compra diretamente na página
-      // Este é um exemplo básico que apenas mostra um alerta
+         document.getElementById('preco').addEventListener('click', function() {
       alert('Você clicou no preço. Agora você pode finalizar a compra.');
     });
 
-    // Adiciona um ouvinte de evento de clique ao botão de finalizar compra
     document.getElementById('botaoFinalizarCompra').addEventListener('click', function() {
-      // Aqui você pode adicionar a lógica para finalizar a compra
-      // Por exemplo, enviar uma solicitação para o servidor para processar a compra
-      // Ou abrir um modal com um formulário de compra
-      // Este é um exemplo básico que apenas mostra um alerta
       alert('Compra finalizada com sucesso!');
     });
+     if ("Notification" in window) {
+      Notification.requestPermission().then(function (result) {
+        if (result === "granted") {
+          function mostrarNotificacao() {
+            var notificacao = new Notification("Compra Realizada!", {
+              body: "Sua compra foi realizada com sucesso!",
+              icon: "caminho/para/icone.png"
+            });
+          }
+        }
+      });
+    }
 </script>
 
 </body>
