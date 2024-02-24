@@ -14,36 +14,36 @@
         <h2>macarrão</h2>
         <img id= img1 src="imagens/294322-original.jpg">
         <p>macarrão a bolonhesa.</p>
-        <p class="price">R$ 29,99</p>
-        <button onclick="addToCart(20)">Adicionar ao Carrinho</button>
+        <p class="price">R$ 14,00</p>
+        <button onclick="addToCart(14)">Adicionar ao Carrinho</button>
     </div>
     <div class="menu-item">
         <h2>comida simples</h2>
         <img src="imagens/download (1).jpg">
         <p>arroz, feijão, tomate, macarrão, batata frita.</p>
-        <p class="price">R$ 9,99</p>
-        <button onclick="addToCart(25)">Adicionar ao Carrinho</button>
+        <p class="price">R$ 10,00</p>
+        <button onclick="addToCart(10)">Adicionar ao Carrinho</button>
     </div>
     <div class="menu-item">
         <h2>strogonof</h2>
         <img src="imagens/download (2).jpg">
         <p>arroz, strogonof de frango, batata palha (feijão opcional).</p>
-        <p class="price">R$ 19,99</p>
-        <button onclick="addToCart(18)">Adicionar ao Carrinho</button>
+        <p class="price">R$ 20,00</p>
+        <button onclick="addToCart(20)">Adicionar ao Carrinho</button>
     </div>
     <div class="menu-item">
         <h2>lazanha</h2>
         <img src="imagens/download (3).jpg">
         <p>lazanha a bolonhesa.</p>
-        <p class="price">R$ 29,99</p>
-        <button onclick="addToCart(18)">Adicionar ao Carrinho</button>
+        <p class="price">R$ 30,00</p>
+        <button onclick="addToCart(30)">Adicionar ao Carrinho</button>
     </div>
     <div class="menu-item">
         <h2>feijoada</h2>
         <img src="imagens/download.jpg">
         <p>feijão preto, linguiça calabresa, carne de porco.</p>
-        <p class="price">R$ 15,99</p>
-        <button onclick="addToCart(18)">Adicionar ao Carrinho</button>
+        <p class="price">R$ 15,00</p>
+        <button onclick="addToCart(15)">Adicionar ao Carrinho</button>
     </div>
 
     <div id="cart">
@@ -60,13 +60,6 @@
         total += price;
         document.getElementById("total").innerText = "R$ " + total.toFixed(2);
     }
-         document.getElementById('preco').addEventListener('click', function() {
-      alert('Você clicou no preço. Agora você pode finalizar a compra.');
-    });
-
-    document.getElementById('botaoFinalizarCompra').addEventListener('click', function() {
-      alert('Compra finalizada com sucesso!');
-    });
      if ("Notification" in window) {
       Notification.requestPermission().then(function (result) {
         if (result === "granted") {
@@ -79,6 +72,13 @@
         }
       });
     }
+    document.getElementById('preco').addEventListener('click', function() {
+      alert('Você clicou no preço. Agora você pode finalizar a compra.');
+    });
+
+    document.getElementById('botaoFinalizarCompra').addEventListener('click', function() {
+      alert('Compra finalizada com sucesso!');
+    });
 </script>
 
 </body>
