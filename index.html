@@ -52,6 +52,24 @@
         <button id="botaoFinalizarCompra">Finalizar Compra</button>
     </div>
 </div>
+<fieldset>
+    <legend>escolha o tamanho da marmitex:</legend>
+  
+    <div>
+      <input type="checkbox" id="pequena" name="pequena" checked />
+      <label for="pequena">pequena</label>
+    </div>
+  
+    <div>
+      <input type="checkbox" id="media" name="media" />
+      <label for="media">media</label>
+    </div>
+    <div>
+        <input type="checkbox" id="grande" name="grande" />
+        <label for="grande">grande</label>
+      </div>
+      <legend>escolha apenas um.</legend>
+  </fieldset>
 
 <script>
 
@@ -60,20 +78,22 @@
     function addToCart(price) {
         total += price;
         document.getElementById("total").innerText = "R$ " + total.toFixed(2);
+        alert("compra finalizada")
     }
-
      if ("Notification" in window) {
       Notification.requestPermission().then(function (result) {
-        if (result === "granted") {
+        if (result === "botaoFinalizarCompra") {
           function mostrarNotificacao() {
             var notificacao = new Notification("Compra Realizada!", {
               body: "Sua compra foi realizada com sucesso!",
               icon: "caminho/para/icone.png"
+              
             });
           }
         }
       });
     }
+
 
 </script>
 
